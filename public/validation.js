@@ -106,6 +106,14 @@ function validateDescription() {
     return showError("description", "");
 }
 
+document.getElementById("fullName").addEventListener("blur", validateFullName);
+
+document.getElementById("email").addEventListener("blur", validateEmail);
+
+document.getElementById("vehicleMake").addEventListener("blur", validateVehicleMake);
+
+document.getElementById("description").addEventListener("blur", validateDescription);
+
 
 form.addEventListener("submit", function(event) {
     let valid = true;
