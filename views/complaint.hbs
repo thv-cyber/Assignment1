@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Complaint Submitted</title>
+        <link rel="stylesheet" href="/styles.css">
+    </head>
+
+    <body>
+        <main class="container">
+            <h1>Complaint Submitted</h1>
+
+            <p>Your complaint has been received.</p>
+
+
+            <fieldset>
+                <legend>Customer Information</legend>
+
+                <p><strong>Full Name:</strong> {{complaint.fullName}}</p>
+
+                <p><strong>Email Address:</strong> {{complaint.email}}</p>
+
+                <p><strong>Phone Number:</strong> {{complaint.phone}}</p>
+            </fieldset>
+
+
+            <fieldset>
+                <legend>Vehicle Information</legend>
+
+                <p><strong>Vehicle Make:</strong> {{complaint.vehicleMake}}</p>
+
+                <p><strong>Vehicle Model:</strong> {{complaint.vehicleModel}}</p>
+
+                <p><strong>VIN:</strong> {{complaint.vin}}</p>
+            </fieldset>
+
+
+            <fieldset>
+                <legend>Complaint Details</legend>
+
+                <p><strong>Subject:</strong> {{complaint.subject}}</p>
+
+                <p><strong>Description:</strong> {{complaint.description}}</p>
+            </fieldset>
+
+
+            <fieldset>
+                <legend>Review Information</legend>
+
+                <p>
+                    <strong>Expected Review Date:</strong>
+                    {{expectedReviewDate complaint.submittedAt}}
+                </p>
+            </fieldset>
+
+
+            {{#if complaint.image}}
+
+                <fieldset>
+                    <legend>Uploaded Image</legend>
+
+                    <p>
+                        <a href="/uploads/{{complaint.image}}" target="_blank">
+                            View Uploaded Image
+                        </a>
+                    </p>
+
+                    <img src="/uploads/{{complaint.image}}"
+                         alt="Complaint Image"
+                         width="400">
+                </fieldset>
+
+            {{/if}}
+
+
+            <a href="/">Submit Another Complaint</a>
+
+        </main>
+    </body>
+</html>

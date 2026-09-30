@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Right Drive Automotive</title>
+        <link rel="stylesheet" href="/styles.css">
+    </head>
+
+    <body>
+        <main class="container">
+            <h1>Right Drive Automotive</h1>
+            <h2>Vehicle Complaint Form</h2>
+
+            <p>Please complete the form below to submit a complaint about your vehicle.</p>
+
+            <form
+                id="complaintForm"
+                action="/complaints"
+                method="POST"
+                enctype="multipart/form-data"
+                novalidate>
+
+                <fieldset>
+                    <legend>Customer Information</legend>
+
+                    <label for="fullName">Full Name</label>
+
+                    <input type="text"
+                           id="fullName"
+                           name="fullName"
+                           value="{{values.fullName}}">
+
+                    <small class="error" id="fullNameError"></small>
+
+                    <label for="email">Email Address</label>
+
+                    <input type="email"
+                           id="email"
+                           name="email"
+                           value="{{values.email}}">
+
+                    <small class="error" id="emailError"></small>
+
+                    <label for="phone">Phone Number</label>
+
+                    <input type="tel"
+                           id="phone"
+                           name="phone"
+                           value="{{values.phone}}">
+
+                    <small class="error" id="phoneError"></small>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Vehicle Information</legend>
+
+                    <label for="vehicleMake">Vehicle Make</label>
+
+                    <input type="text"
+                           id="vehicleMake"
+                           name="vehicleMake"
+                           value="{{values.vehicleMake}}">
+
+                    <small class="error" id="vehicleMakeError"></small>
+
+                    <label for="vehicleModel">Vehicle Model</label>
+
+                    <input type="text"
+                           id="vehicleModel"
+                           name="vehicleModel"
+                           value="{{values.vehicleModel}}">
+
+                    <small class="error" id="vehicleModelError"></small>
+
+                    <label for="vin">VIN</label>
+
+                    <input type="text"
+                           id="vin"
+                           name="vin"
+                           maxlength="17"
+                           value="{{values.vin}}">
+
+                    <small class="error" id="vinError"></small>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Complaint Details</legend>
+
+                    <label for="subject">Subject</label>
+
+                    <input type="text"
+                           id="subject"
+                           name="subject"
+                           value="{{values.subject}}">
+
+                    <small class="error" id="subjectError"></small>
+
+                    <label for="description">Detailed Description</label>
+
+                    <textarea id="description"
+                              name="description"
+                              rows="7">{{values.description}}</textarea>
+
+                    <small class="error" id="descriptionError"></small>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Complaint Image</legend>
+
+                    <label for="complaintImage">Upload an image</label>
+
+                    <input type="file"
+                           id="complaintImage"
+                           name="complaintImage"
+                           accept="image/*">
+                </fieldset>
+
+                <button type="submit">Submit Complaint</button>
+
+            </form>
+        </main>
+
+        {{!-- <script src="/validation.js"></script> --}}
+    </body>
+</html>
